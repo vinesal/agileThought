@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.CareersPage;
 import pages.Dominion;
+import pages.DominionSDET;
 import pages.Homepage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
@@ -18,6 +19,7 @@ public class search_step_definitions {
     Homepage hp = new Homepage(driver);
     CareersPage cp = new CareersPage(driver);
     Dominion dd = new Dominion(driver);
+    DominionSDET ds = new DominionSDET(driver);
     @Given("user is on the Primestreet Homepage")
     public void user_is_on_the_primestreet_homepage() throws InterruptedException {
        String URL = ConfigurationReader.getProperty("url");
@@ -34,7 +36,7 @@ public class search_step_definitions {
     @When("user clicks on Available Jobs link")
     public void user_clicks_on_available_jobs_link() {
        cp.availJobs();
-     /*   String  wh = (driver.getWindowHandle());
+      /* String  wh = (driver.getWindowHandle());
         driver.switchTo().window(wh);  */
     }
     @When("user clicks on SDET link")
@@ -43,12 +45,11 @@ public class search_step_definitions {
     }
     @When("user clicks on Apply link")
     public void user_clicks_on_apply_link() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       ds.app();
     }
     @Then("user lands on the application page")
     public void user_lands_on_the_application_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        System.out.println("current url: " + driver.getCurrentUrl());
+        driver.quit();
     }
 }

@@ -11,7 +11,8 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt"},
         glue = "step_definitions",
         features = "src/test/resources/features",
-        dryRun = false
+        dryRun = false,
+        publish = true
 
 )
 public class CucumberRunner {
