@@ -9,9 +9,6 @@ public class ConfigurationReader {
     private static Properties properties = new Properties();
 
     static {
-        //try with resources
-        //allows to automatically close input stream when object is not used any more
-        //works only for the classes that implement AutoCloseable interface
         try (InputStream in = new FileInputStream("configuration.properties")) {
             properties.load(in);
         } catch (IOException e) {

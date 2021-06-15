@@ -5,13 +5,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import pages.CareersPage;
 import pages.Dominion;
 import pages.DominionSDET;
 import pages.Homepage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
+
+
 
 public class search_step_definitions {
 
@@ -26,22 +27,24 @@ public class search_step_definitions {
        driver.get(URL);
         System.out.println("current URL: "+ driver.getCurrentUrl());
         Thread.sleep(1000);
+      String wh =  driver.getWindowHandle();
     }
 
     @When("user clicks on Careers link")
     public void user_clicks_on_careers_link() {
      hp.careerSearch();
-        System.out.println(driver.getCurrentUrl());}
+        System.out.println("current url: " + driver.getCurrentUrl());}
 
     @When("user clicks on Available Jobs link")
     public void user_clicks_on_available_jobs_link() {
        cp.availJobs();
-      /* String  wh = (driver.getWindowHandle());
-        driver.switchTo().window(wh);  */
+        System.out.println("url "+driver.getCurrentUrl());
     }
+
     @When("user clicks on SDET link")
     public void user_clicks_on_sdet_link() {
-     dd.clickSDET();
+     dd.clickSDET(driver);
+
     }
     @When("user clicks on Apply link")
     public void user_clicks_on_apply_link() {
@@ -50,6 +53,6 @@ public class search_step_definitions {
     @Then("user lands on the application page")
     public void user_lands_on_the_application_page() {
         System.out.println("current url: " + driver.getCurrentUrl());
-        driver.quit();
+
     }
 }

@@ -10,7 +10,7 @@ public class Homepage {
 
 @FindBy
          (xpath =" //a[@href = '/careers']")
-      //  (xpath = "//*[contains(text(),'Careers')]")
+
   WebElement careers;
 public Homepage(WebDriver driver){
   PageFactory.initElements(Driver.getDriver(), this);

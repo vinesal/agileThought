@@ -28,6 +28,11 @@ public class Driver {
                     throw new RuntimeException("Browser is not implemented yet: " + browser);
             }
         }
+        driver.manage().window().maximize();
+
         return driver;
+    }
+    public static void quit(){
+        driver.quit();
     }
 }
