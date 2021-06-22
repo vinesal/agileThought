@@ -1,9 +1,8 @@
-Feature: jobSearch
+Feature: Automation Search
 
-  Scenario: user searches for a job
-    Given user is on the Primestreet Homepage
-    When user clicks on Careers link
-    And user clicks on Available Jobs link
-    And user clicks on SDET link
-    And user clicks on Apply link
-    Then user lands on the application page
+  Scenario: user searches for Automation services
+    Given user is on the Agile Thought Homepage
+    When user clicks on Automation link
+    And user scrolls down the page
+    And user fills in the required information
+    Then user receives confirmation message
