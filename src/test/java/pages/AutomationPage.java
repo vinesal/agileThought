@@ -17,15 +17,14 @@ public class AutomationPage extends Homepage {
         @FindBy(name = "firstname")
         WebElement firstName;
         @FindBy (name = "lastname")
-        WebElement lastName;
+         private WebElement lastName;
         @FindBy (name = "email")
         WebElement email;
         @FindBy (name = "company")
         WebElement company;
         @FindBy (tagName = "textarea")
-       // @FindBy (xpath = "//*[@id=\"description-84865226-adca-46da-a274-703f2a2c3c94\"]")
         WebElement helps;
-    @FindBy (xpath = "//input[@type = 'submit']")
+        @FindBy (xpath = "//input[@type = 'submit']")
         WebElement submit;
         @FindBy (xpath = "//div[contains(text(),'Thank you for contacting us. We will be in touch')]")
         WebElement confirmMsg;
